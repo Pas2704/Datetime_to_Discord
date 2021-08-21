@@ -49,7 +49,7 @@ def check_for_non_numbers(split_input):
     for num in split_input:
         try:
             int(num)
-        except:
+        except ValueError:
             print(f'Error: "{num}" is not a whole number. Please try again.')
             Error = True
             break
@@ -147,4 +147,4 @@ if __name__ == "__main__":
             "------------------------------------------------------------------------------------------"
         )
     finally:
-        exit = input("Enter to Exit")
+        wait_for_exit = input("Enter to Exit")
