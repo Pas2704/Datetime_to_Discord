@@ -76,31 +76,32 @@ def get_time():
 
 def time_until_str(target_datetime):
     seconds = (target_datetime - datetime.now()).total_seconds()
+    result = f"Error, {seconds} not defined"
     if seconds >= 172800:
-        return f"in {round(seconds/86400)} days"
+        result = f"in {round(seconds/86400)} days"
     if seconds >= 86400:
-        return "in a day"
+        result = "in a day"
     if seconds >= 7200:
-        return f"in {round(seconds/3600)} hours"
+        result = f"in {round(seconds/3600)} hours"
     if seconds >= 3600:
-        return "in an hour"
+        result = "in an hour"
     if seconds >= 120:
-        return f"in {round(seconds/60)} minutes"
+        result = f"in {round(seconds/60)} minutes"
     if seconds > 0:
-        return "in a minute"
+        result = "in a minute"
     if seconds <= -172800:
-        return f"{abs(round(seconds/86400))} days ago"
+        result = f"{abs(round(seconds/86400))} days ago"
     if seconds <= -86400:
-        return "in a day"
+        result = "in a day"
     if seconds <= -7200:
-        return f"{abs(round(seconds/3600))} hours ago"
+        result = f"{abs(round(seconds/3600))} hours ago"
     if seconds <= 3600:
-        return "in an hour"
+        result = "in an hour"
     if seconds <= -120:
-        return f"{abs(round(seconds/60))} minutes ago"
+        result = f"{abs(round(seconds/60))} minutes ago"
     if seconds <= 0:
-        return f"a minute ago"
-    return f"Error, {seconds} not defined"
+        result = f"a minute ago"
+    return result
 
 
 if __name__ == "__main__":
