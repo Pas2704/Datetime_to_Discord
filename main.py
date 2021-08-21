@@ -79,27 +79,27 @@ def time_until_str(target_datetime):
     result = f"Error, {seconds} not defined"
     if seconds >= 172800:
         result = f"in {round(seconds/86400)} days"
-    if seconds >= 86400:
+    elif seconds >= 86400:
         result = "in a day"
-    if seconds >= 7200:
+    elif seconds >= 7200:
         result = f"in {round(seconds/3600)} hours"
-    if seconds >= 3600:
+    elif seconds >= 3600:
         result = "in an hour"
-    if seconds >= 120:
+    elif seconds >= 120:
         result = f"in {round(seconds/60)} minutes"
-    if seconds > 0:
+    elif seconds > 0:
         result = "in a minute"
-    if seconds <= -172800:
+    elif seconds <= -172800:
         result = f"{abs(round(seconds/86400))} days ago"
-    if seconds <= -86400:
+    elif seconds <= -86400:
         result = "in a day"
-    if seconds <= -7200:
+    elif seconds <= -7200:
         result = f"{abs(round(seconds/3600))} hours ago"
-    if seconds <= 3600:
+    elif seconds <= 3600:
         result = "in an hour"
-    if seconds <= -120:
+    elif seconds <= -120:
         result = f"{abs(round(seconds/60))} minutes ago"
-    if seconds <= 0:
+    elif seconds <= 0:
         result = f"a minute ago"
     return result
 
