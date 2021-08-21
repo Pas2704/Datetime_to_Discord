@@ -4,21 +4,6 @@ import math
 import re
 
 
-# def get_tz():
-#     while True:
-#         timezone_in = input(
-#             'Enter a timezone (such as EST, CST, PST, UTC...)\nALTERNATIVELY Enter "local" to use your timezone\n'
-#         )
-#         if timezone_in == "local":
-#             timezone_in = str(just_time.tzname)
-#         timezone = tzinfo.tzname(timezone_in)
-#         if timezone:
-#             return timezone
-#         print(
-#             f"Error: {timezone_in} not recognized as a valid timezone. Please try again."
-#         )
-
-
 def get_date():
     while True:
         the_date_in = input("Enter a date in MM/DD/YYYY format: ")
@@ -78,7 +63,6 @@ def get_time():
 
 def time_until_str(target_datetime):
     seconds = (target_datetime - datetime.now()).total_seconds()
-    # print(f"seconds: {seconds}")
     if seconds >= 172800:
         return f"in {round(seconds/86400)} days"
     if seconds >= 86400:
